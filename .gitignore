@@ -1,0 +1,14 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Files for Exploratory Data Analysis
+eda.ipynb
+data/HoC-GE2024-results-by-constituency.csv

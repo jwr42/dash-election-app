@@ -1,0 +1,31 @@
+party_colors = {
+    "Lab": "Red",
+    "Con": "DarkBlue",
+    "LD": "Orange",
+    "SNP": "Yellow",
+    "SF": "DarkGreen",
+    "Green": "LightGreen",
+    "PC": "Green",
+    "RUK": "Purple",
+    "Ind": "LightGrey",
+}
+
+result_colors = {
+    "Lab hold": "Red",
+    "Lab gain from Con": "Red",
+    "Con hold": "DarkBlue",
+    "LD gain from Con": "Orange",
+    "Lab gain from SNP": "Red",
+    "SNP hold": "Yellow",
+    "LD hold": "Orange",
+    "SF hold": "DarkGreen",
+    "Ind gain from Lab": "LightGrey",
+    "DUP hold": "Blue",
+    "RUK gain from Con": "Purple",
+    "LD gain from SNP": "Orange",
+    "SDLP hold": "Blue",
+    "PC gain from Con": "Green",
+    "PC hold": "Green",
+    "Spk hold": "Black",
+    "Green hold": "LightGreen",
+}
