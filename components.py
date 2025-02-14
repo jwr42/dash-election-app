@@ -6,7 +6,7 @@ party_colors = {
     "SF": "DarkGreen",
     "Green": "LightGreen",
     "PC": "Green",
-    "RUK": "Purple",
+    "RUK": "LightBlue",
     "Ind": "LightGrey",
 }
 
@@ -21,7 +21,7 @@ result_colors = {
     "SF hold": "DarkGreen",
     "Ind gain from Lab": "LightGrey",
     "DUP hold": "Blue",
-    "RUK gain from Con": "Purple",
+    "RUK gain from Con": "LightBlue",
     "LD gain from SNP": "Orange",
     "SDLP hold": "Blue",
     "PC gain from Con": "Green",
