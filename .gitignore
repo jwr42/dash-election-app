@@ -12,3 +12,6 @@ wheels/
 # Files for Exploratory Data Analysis
 eda.ipynb
 data/HoC-GE2024-results-by-constituency.csv
+
+# MacOS files
+.DS_Store
