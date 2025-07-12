@@ -11,7 +11,7 @@ What were the regional results of the UK general election? This application visu
 - Donut visualisation - showing the percentage of constituency seat won by each political party
 - Treemap visualisation - showing the proportion of seats that were held or gained by each political party
 
-### Core Dependencies:
+### Key Dependencies
 - Plotly Dash
 - Pandas
 
