@@ -1,4 +1,4 @@
-# 2024 REgional UK General Election Results
+# 2024 Regional UK General Election Results
 
 What were the regional results of the UK general election? This application visualised the result of the United Kingdom's 2024 General Election result. It features:
 
@@ -11,6 +11,6 @@ What were the regional results of the UK general election? This application visu
 
 ![app screenshot](app-screenshot.png "Screenshot of the Dash App")
 
-Core Dependencies:
+### Core Dependencies:
 - Plotly Dash
 - Pandas
