@@ -9,122 +9,122 @@ import plotly.express as px
 df = pd.read_csv("data/cleaned_data.csv")
 
 # Instantiate app
-app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = Dash(external_stylesheets=[dbc.themes.FLATLY])
 
 # Define layout
 app.layout = dbc.Container(
-    html.Div(
-        [
-            # title row
-            html.Br(),
-            html.H1("2024 Regional UK General Election Results"),
-            html.Hr(),
-            # filters
-            dbc.Row(
-                [
-                    dbc.Col(
-                        dbc.InputGroup(
-                            [
-                                dbc.InputGroupText("Region"),
-                                dbc.Select(
-                                    options=[{"label": "All Regions", "value": "All"}]
-                                    + [
-                                        {"label": region, "value": region}
-                                        for region in df["Region"].unique()
-                                    ],
-                                    value="All",
-                                    id="RegionDropdown",
-                                ),
-                            ]
-                        ),
-                        width=4,
-                    ),
-                ],
-            ),
-            html.Hr(),
-            # cards
-            dbc.Row(
-                [
-                    dbc.Col(
-                        dbc.Card(
-                            dbc.CardBody(
-                                [
-                                    "Average MP Majority",
-                                    html.H2(id="AvgMajorityCard"),
+    [
+        # title row
+        html.Br(),
+        html.H1("2024 Regional UK General Election Results"),
+        
+        # Create a filter for the UK regions for the UK General Election
+        html.Hr(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    dbc.InputGroup(
+                        [
+                            dbc.InputGroupText("Region"),
+                            dbc.Select(
+                                options=[{"label": "All Regions", "value": "All"}]
+                                + [
+                                    {"label": region, "value": region}
+                                    for region in df["Region"].unique()
                                 ],
+                                value="All",
+                                id="RegionDropdown",
                             ),
-                        ),
+                        ]
                     ),
-                    dbc.Col(
-                        dbc.Card(
-                            dbc.CardBody(
-                                [
-                                    "Seats That Changed Party",
-                                    html.H2(id="SeatChangeCard"),
-                                ],
-                            ),
-                        ),
-                    ),
-                    dbc.Col(
-                        dbc.Card(
-                            dbc.CardBody(
-                                [
-                                    "Total Votes Cast",
-                                    html.H2(id="TotalVotesCastCard"),
-                                ]
-                            ),
-                        ),
-                    ),
-                    dbc.Col(
-                        dbc.Card(
-                            dbc.CardBody(
-                                [
-                                    "Electorate Turnout",
-                                    html.H2(id="TurnoutCard"),
-                                ]
-                            ),
-                        ),
-                    ),
-                ],
-            ),
-            # visuals
-            dbc.Row(
-                [
-                    dbc.Col(
-                        dbc.Card(
+                    width=4,
+                ),
+            ],
+        ),
+        html.Hr(),
+
+        # cards
+        dbc.Row(
+            [
+                dbc.Col(
+                    dbc.Card(
+                        dbc.CardBody(
                             [
-                                dbc.CardHeader("% Seats by Party"),
-                                dbc.CardBody(
-                                    dcc.Graph(
-                                        id="donut_chart",
-                                        config={"displayModeBar": False},
-                                        className="h-100",
-                                    ),
-                                ),
+                                "Average MP Majority",
+                                html.H2(id="AvgMajorityCard"),
+                            ],
+                        ),
+                    ),
+                ),
+                dbc.Col(
+                    dbc.Card(
+                        dbc.CardBody(
+                            [
+                                "Seats That Changed Party",
+                                html.H2(id="SeatChangeCard"),
+                            ],
+                        ),
+                    ),
+                ),
+                dbc.Col(
+                    dbc.Card(
+                        dbc.CardBody(
+                            [
+                                "Total Votes Cast",
+                                html.H2(id="TotalVotesCastCard"),
                             ]
                         ),
-                        width=5,
                     ),
-                    dbc.Col(
-                        dbc.Card(
+                ),
+                dbc.Col(
+                    dbc.Card(
+                        dbc.CardBody(
                             [
-                                dbc.CardHeader("Seat Results Summary"),
-                                dbc.CardBody(
-                                    dcc.Graph(
-                                        id="treemap_chart",
-                                        config={"displayModeBar": False},
-                                        className="h-100",
-                                    ),
-                                ),
+                                "Electorate Turnout",
+                                html.H2(id="TurnoutCard"),
                             ]
                         ),
-                        width=7,
                     ),
-                ],
-                style={"marginBlock": "10px"},
-            ),
-        ]
-    )
+                ),
+            ],
+        ),
+        # visuals
+        dbc.Row(
+            [
+                dbc.Col(
+                    dbc.Card(
+                        [
+                            dbc.CardHeader("% Seats by Party"),
+                            dbc.CardBody(
+                                dcc.Graph(
+                                    id="donut_chart",
+                                    config={"displayModeBar": False},
+                                    className="h-100",
+                                ),
+                            ),
+                        ]
+                    ),
+                    width=5,
+                ),
+                dbc.Col(
+                    dbc.Card(
+                        [
+                            dbc.CardHeader("Seat Results Summary"),
+                            dbc.CardBody(
+                                dcc.Graph(
+                                    id="treemap_chart",
+                                    config={"displayModeBar": False},
+                                    className="h-100",
+                                ),
+                            ),
+                        ]
+                    ),
+                    width=7,
+                ),
+            ],
+            style={"marginBlock": "10px"},
+        ),
+    ]
 )
 
 
